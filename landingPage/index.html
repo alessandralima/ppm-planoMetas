@@ -19,6 +19,41 @@
 
     <!-- Custom styles for this template -->
     <link href="css/landing-page.css" rel="stylesheet">
+      
+      
+    <script>
+        var subButton = document.querySelector('.btn btn-info btn-lg');
+        var subbedClass = 'subbed';
+
+        subButton.addEventListener('click', function(e) {
+        toggleSubbed();
+        e.preventDefault();
+        });
+
+        function toggleSubbed() {
+        var text;
+        var count = subButton.dataset.count;
+        console.log(count)
+
+        if (subButton.classList.contains(subbedClass)) {
+            subButton.classList.remove(subbedClass);
+            text = 'Inscreva-se';
+            count--;
+        } else {
+            subButton.classList.add(subbedClass);
+            text = 'Inscreva-se';
+            count++;
+        }
+
+        subButton.querySelector('.btn btn-info btn-lg').innerHTML = text;
+        subButton.dataset.count = count;
+        }
+
+        if ('alert' == '') {
+        window.setInterval(toggleSubbed, 1000);
+        }
+    </script>      
+      
 
   </head>
 
@@ -51,21 +86,51 @@
     <header class="intro-header">
       <div class="container">
         <div class="intro-message">
-          <h1>Programa Plano de Metas</h1>
-          <h3>Organização, Foco e Desenvolvimento de carreira</h3>                          
-          <hr class="intro-divider">
-          <ul class="list-inline intro-social-buttons">
-            <li class="list-inline-item">
-              <a href="#" class="btn btn-secondary btn-lg">                
+            <h1>Programa Plano de Metas</h1>
+            <h3>Organização, Foco e Desenvolvimento de carreira</h3>       
+            <hr class="intro-divider">
+
+            <ul class="list-inline intro-social-buttons">
+
+            <!--            <li class="list-inline-item">            
+              <a href="#" class="btn btn-secondary btn-lg" >                
                 <span class="network-name">Quero Participar!</span>
               </a>
+
+            </li>     -->         
+
+
+
+            <li class="list-inline-item">            
+                <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3">
+
+
+                            <div class="well">
+                                 <form action="#">
+                                  <div class="input-group">
+                                     <input class="btn btn-lg" name="email" id="email" type="email" placeholder="seu@email" required>
+                                      &nbsp;
+                                     <button class="btn btn-info btn-lg" type="submit">Inscreva-se</button>
+                                  </div>
+                                 </form>
+                             </div>
+
+                        </div>
+                    </div>
+                </div>
+                </section>
             </li>
+            <!--              
             <li class="list-inline-item">
               <a href="#" class="btn btn-secondary btn-lg">                
                 <span class="network-name">Não tenho interesse!</span>
               </a>
-            </li>                                    
-          </ul>
+            </li>   -->          
+
+            </ul>
         </div>
       </div>
     </header>
