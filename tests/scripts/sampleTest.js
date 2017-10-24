@@ -3,7 +3,7 @@ module.exports = {
     browser
       .url('http://ppm-planometas-stagingtest.mybluemix.net/')
       .pause(3000)
-      .waitForElementVisible('#queroConhecer', 60000)
+      .waitForElementVisible('.btn-info', 60000)
       // .setValue('input.gsfi', 'Test')
       // .waitForElementPresent('#search-pag', 60000)
       .end();
